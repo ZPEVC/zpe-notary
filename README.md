@@ -3,6 +3,13 @@
 An append-only public record of hashes. Git's commit timestamp is the third party: we cannot change the time a
 commit was made, so a hash published here can be shown to have existed at that moment.
 
+## Start here
+
+- **[PLAIN-WORDS.md](PLAIN-WORDS.md)** - the whole thing in one page, no jargon.
+- **[EXAMPLES.md](EXAMPLES.md)** - three worked cases: an audit, a disclosure, a price.
+- **[llms.txt](llms.txt)** - the contract for an agent that wants to publish or verify a record.
+- **[WHY-NOT-A-CHAIN.md](WHY-NOT-A-CHAIN.md)** - the question everyone asks first.
+
 ## What it attests
 
 1. **These bytes existed at this time.** The record carries a SHA-256 per artifact and the commit carries the date.

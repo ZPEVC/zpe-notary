@@ -1,0 +1,68 @@
+# zpe-notary
+
+> An append-only public record of file hashes. You publish a hash, sign it, and push. The commit date is the proof
+> that the file existed then. No account, no fee, no chain to buy.
+
+## What this is for
+
+A stranger needs to check that a document you show them today is the document you had on a given day. You cannot
+prove that with a private file, and a paid notary is slow and does not scale to a page someone links to.
+
+## Records
+
+- `records/<UTC-stamp>.json` - one publication, shaped `zpe.notary.record/1`, with a detached `.sig`.
+- `index.json` - every record, its own hash, and how many rows it carries.
+- `allowed_signers` - the public keys that sign records, one identity per line.
+
+## Verify a record
+
+```sh
+git clone https://github.com/ZPEVC/zpe-notary && cd zpe-notary
+ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence \
+  -s records/<record>.json.sig < records/<record>.json
+sha256sum your-copy-of-the-file   # must equal the row's sha256
+```
+
+## Publish a record
+
+```sh
+# rows are {ts, subject, kind, sha256, bytes, source?, method?}
+# 1. write records/<UTC-stamp>.json shaped zpe.notary.record/1
+# 2. sign it
+ssh-keygen -Y sign -f ~/.ssh/your_key -n evidence records/<UTC-stamp>.json
+# 3. add your public key to allowed_signers under your own identity
+# 4. append the record to index.json
+# 5. open a pull request
+```
+
+The merge commit is the timestamp that matters.
+
+## What it does not attest
+
+- Not truth. A filing, not a finding.
+- Not identity beyond the key that signed.
+- Not deletion-proof: a force-push can remove a record from `main`, but every clone keeps the old commit, so a
+  disappearance is itself visible.
+
+## Honest limits of the timestamp
+
+GitHub's commit time is a clock we do not run, which is good, and a clock we do not control, which is not the same
+as a notary's. If you need an anchor nobody can dispute, add an OpenTimestamps attestation of the record
+(`ots stamp records/<record>.json`) and commit the `.ots` file beside it; that anchors the hash in Bitcoin without a
+wallet or a fee. Until that exists here, say "GitHub's clock" and not "immutable".
+
+## Why not a blockchain
+
+A timestamp needs one property: nobody can backdate it. A public commit gives that for free. A chain adds a token,
+a wallet, gas, and a UX cliff for the person who just wants to check a PDF. If a project needs anchoring into a
+chain, OpenTimestamps does it in one file without any of that.
+
+## Why would anyone use this
+
+- A freelancer delivering an audit whose "before" numbers matter.
+- An agency publishing a benchmark that a competitor will doubt.
+- Anyone selling a report where the client might ask, later, whether the findings were written after the sale.
+- A disclosure or a takedown where the date of the notice is the argument.
+
+If you do not make claims someone will doubt, you do not need this. That is most people, and saying so is part of
+being trustworthy.
