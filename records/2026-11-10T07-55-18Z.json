@@ -1,0 +1,54 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-10T07:55:18Z",
+ "note": "First record: SEO baseline and two audit reports for three ZPE properties, 2026-11-09.",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "",
+ "rows": [
+  {
+   "ts": "2026-11-10T07:40:53Z",
+   "subject": "SEO baseline, 28-day window 10 Oct to 6 Nov 2026, three properties",
+   "kind": "baseline",
+   "sha256": "ef5da41f816d1cd9e98980a157e0ec716ede969b68994d84ee16c450ab6302d1",
+   "bytes": 829
+  },
+  {
+   "ts": "2026-11-10T07:40:53Z",
+   "subject": "SEO baseline, machine-readable",
+   "kind": "baseline",
+   "sha256": "e6e30a985491c276c5c81b70e239b4f1c34f43306fe7ab75f3d6db960d4e68cd",
+   "bytes": 877
+  },
+  {
+   "ts": "2026-11-10T07:44:35Z",
+   "subject": "Audit report 112410dd5b91, motohorek.life, read 2026-11-10T07:42Z (3 findings)",
+   "kind": "audit",
+   "sha256": "e4e7b3e87c3b67865275d8c520c9df90211f1d09e072bdaddec6acaa3656bfbe",
+   "bytes": 26302
+  },
+  {
+   "ts": "2026-11-10T07:44:35Z",
+   "subject": "Audit report fa13a9f2df8e, pinescriptstrategy.com, read 2026-11-10T07:42Z (1 finding)",
+   "kind": "audit",
+   "sha256": "8b6438e3498aff9611084ab3931fad744ec0a6005ba232e5fdf2727254a32c7e",
+   "bytes": 23314
+  },
+  {
+   "ts": "2026-11-10T07:51:10Z",
+   "subject": "motohorek polish list, measured before any change",
+   "kind": "baseline",
+   "sha256": "90627ba886cf3f67e823939bf12897b3e2d2aad45db6b5fbe8354d1278a4fbce",
+   "bytes": 3219,
+   "source": "Google Search Console 2026-10-10..2026-11-06 + audit 112410dd5b91",
+   "method": "google-search-console-cli query --dimensions query; audit findings"
+  }
+ ]
+}

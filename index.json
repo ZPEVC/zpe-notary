@@ -1,0 +1,14 @@
+{
+ "about": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "records": [
+  {
+   "record": "records/2026-11-10T07-55-18Z.json",
+   "record_sha256": "b953e8e2fe0ab68656e3af29638f353587d38c9e4f77746658b9372d4de4484a",
+   "generated": "2026-11-10T07:55:18Z",
+   "rows": 5
+  }
+ ]
+}
