@@ -1,0 +1,81 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-10T09:04:13Z",
+ "note": "Third record: the Amazon map page live, and the sitemap going from 5 urls to 493.",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "718bfdc4d46976d5d36b3ea99d78ef558518a35e2204d9632c38dc27b3e8758f",
+ "rows": [
+  {
+   "ts": "2026-11-10T07:40:53Z",
+   "subject": "SEO baseline, 28-day window 10 Oct to 6 Nov 2026, three properties",
+   "kind": "baseline",
+   "sha256": "ef5da41f816d1cd9e98980a157e0ec716ede969b68994d84ee16c450ab6302d1",
+   "bytes": 829
+  },
+  {
+   "ts": "2026-11-10T07:40:53Z",
+   "subject": "SEO baseline, machine-readable",
+   "kind": "baseline",
+   "sha256": "e6e30a985491c276c5c81b70e239b4f1c34f43306fe7ab75f3d6db960d4e68cd",
+   "bytes": 877
+  },
+  {
+   "ts": "2026-11-10T07:44:35Z",
+   "subject": "Audit report 112410dd5b91, motohorek.life, read 2026-11-10T07:42Z (3 findings)",
+   "kind": "audit",
+   "sha256": "e4e7b3e87c3b67865275d8c520c9df90211f1d09e072bdaddec6acaa3656bfbe",
+   "bytes": 26302
+  },
+  {
+   "ts": "2026-11-10T07:44:35Z",
+   "subject": "Audit report fa13a9f2df8e, pinescriptstrategy.com, read 2026-11-10T07:42Z (1 finding)",
+   "kind": "audit",
+   "sha256": "8b6438e3498aff9611084ab3931fad744ec0a6005ba232e5fdf2727254a32c7e",
+   "bytes": 23314
+  },
+  {
+   "ts": "2026-11-10T07:51:10Z",
+   "subject": "motohorek polish list, measured before any change",
+   "kind": "baseline",
+   "sha256": "90627ba886cf3f67e823939bf12897b3e2d2aad45db6b5fbe8354d1278a4fbce",
+   "bytes": 3219,
+   "source": "Google Search Console 2026-10-10..2026-11-06 + audit 112410dd5b91",
+   "method": "google-search-console-cli query --dimensions query; audit findings"
+  },
+  {
+   "ts": "2026-11-10T08:02:35Z",
+   "subject": "amazonka-na-karte page, built from content.db id 42997, before publication",
+   "kind": "measurement",
+   "sha256": "c87be1642770c75ea0ca96f2989266c723f168c6a344ad4f46f2be6c80f8761f",
+   "bytes": 82713,
+   "source": "content/content.db + content/build_tree.py --only",
+   "method": "python3 content/build_tree.py --only /amazonka-na-karte/"
+  },
+  {
+   "ts": "2026-11-10T09:04:01Z",
+   "subject": "Live page /amazonka-na-karte/ as first served, 2026-11-10",
+   "kind": "measurement",
+   "sha256": "8bbd7c65d0687307e5b6ee600f9fc9bb76351e512009a6d58ca4f14d2c5ccaf5",
+   "bytes": 82836,
+   "source": "https://motohorek.life/amazonka-na-karte/",
+   "method": "curl; deploy version 335b63c7-e708-4d51-950a-7317d23162af"
+  },
+  {
+   "ts": "2026-11-10T09:04:01Z",
+   "subject": "Live sitemap, 493 urls, replacing a 5-url sitemap on 2026-11-10",
+   "kind": "measurement",
+   "sha256": "521c439775a7b3823b31c7efe7fd1183e5ad8c3bd3d693f7aae8078f21c551fa",
+   "bytes": 126827,
+   "source": "https://motohorek.life/sitemap.xml",
+   "method": "curl"
+  }
+ ]
+}
