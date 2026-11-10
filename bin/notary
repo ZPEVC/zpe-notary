@@ -1,0 +1,156 @@
+#!/usr/bin/env python3
+"""notary: check a file against the public record, in one command.
+
+    notary verify my-report.pdf      # is this file in the record, and when was it filed
+    notary show 90627ba8             # what is filed under this hash prefix
+    notary verify --hash <sha256>    # same, when you only have the hash
+    notary records                   # every record, newest last
+
+What it does: hashes the file, looks the hash up in every record in the notary repo, then verifies that record's
+signature against the repo's own allowed_signers. Two separate questions, answered separately:
+
+  1. is this exact file in the record (hash match)
+  2. is that record genuine (signature valid against a key the repo publishes)
+
+The second is what makes the first mean anything: anyone can write a JSON file claiming a date.
+
+Exit codes: 0 found and signature good, 1 not found, 2 found but the signature did not verify, 3 the repo is missing.
+"""
+import argparse
+import hashlib
+import json
+import os
+import pathlib
+import subprocess
+import sys
+
+NOTARY = pathlib.Path(os.environ.get("ZPE_NOTARY", pathlib.Path.home() / "Projects" / "zpe-notary"))
+
+
+def sha256_file(path: pathlib.Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def records() -> list[pathlib.Path]:
+    return sorted((NOTARY / "records").glob("*.json"))
+
+
+def load(path: pathlib.Path) -> dict:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def verify_signature(path: pathlib.Path) -> bool:
+    allowed = NOTARY / "allowed_signers"
+    sig = pathlib.Path(str(path) + ".sig")
+    if not allowed.exists() or not sig.exists():
+        return False
+    ident = "zpe-evidence"
+    for line in allowed.read_text(encoding="utf-8").splitlines():
+        parts = line.split()
+        if len(parts) >= 2:
+            ident = parts[0]
+            break
+    res = subprocess.run(["ssh-keygen", "-Y", "verify", "-f", str(allowed), "-I", ident, "-n", "evidence",
+                          "-s", str(sig)], input=path.read_bytes(), capture_output=True)
+    return res.returncode == 0
+
+
+def find(h: str) -> list[tuple[pathlib.Path, dict]]:
+    hits = []
+    for rec_path in records():
+        try:
+            rec = load(rec_path)
+        except ValueError:
+            continue
+        for row in rec.get("rows") or []:
+            if row.get("sha256") == h:
+                hits.append((rec_path, dict(row, record_generated=rec.get("generated"))))
+    return hits
+
+
+def cmd_verify(args) -> int:
+    if args.hash:
+        h = args.hash.strip().lower()
+    else:
+        path = pathlib.Path(args.path).expanduser()
+        if not path.exists():
+            print(f"no such file: {path}")
+            return 3
+        h = sha256_file(path)
+    print(f"sha256  {h}")
+    hits = find(h)
+    if not hits:
+        print("NOT FILED: no record carries this hash.")
+        print("If you expected it to be, check you are verifying the file that was filed, not a copy that was re-saved.")
+        return 1
+    worst = 0
+    for rec_path, row in hits:
+        good = verify_signature(rec_path)
+        print("")
+        print(f"record    {rec_path.name}")
+        print(f"filed     {row.get('record_generated') or row.get('ts')}")
+        print(f"subject   {row.get('subject')}")
+        if row.get("source"):
+            print(f"source    {row['source']}")
+        if row.get("method"):
+            print(f"method    {row['method']}")
+        print(f"signature {'GOOD' if good else 'BAD'}")
+        if not good:
+            worst = 2
+    if worst:
+        print("\nThe hash is in the record, but the record did not verify. Treat this as unproven.")
+    else:
+        print("\nVERIFIED: this file is the file that was filed, and the record is signed by a key the notary publishes.")
+    return worst
+
+
+def cmd_show(args) -> int:
+    prefix = args.prefix.strip().lower()
+    found = 0
+    for rec_path in records():
+        rec = load(rec_path)
+        for row in rec.get("rows") or []:
+            if str(row.get("sha256", "")).startswith(prefix):
+                found += 1
+                print(f"{row['sha256'][:16]}  {rec.get('generated')}  {row.get('kind','?'):10} {row.get('subject')}")
+    if not found:
+        print("nothing filed under that prefix")
+        return 1
+    return 0
+
+
+def cmd_records(_args) -> int:
+    for rec_path in records():
+        rec = load(rec_path)
+        print(f"{rec_path.name}  {len(rec.get('rows') or []):>2} rows  {rec.get('note','')[:70]}")
+    return 0
+
+
+def main() -> int:
+    if not (NOTARY / "records").is_dir():
+        print(f"notary repo not found at {NOTARY} (set ZPE_NOTARY, or git clone it)")
+        return 3
+    ap = argparse.ArgumentParser(prog="notary", description="Check a file against the public record.")
+    sub = ap.add_subparsers(dest="verb", required=True)
+    v = sub.add_parser("verify", help="is this file filed, and is the record genuine")
+    v.add_argument("path", nargs="?")
+    v.add_argument("--hash", help="verify a hash instead of a file")
+    s = sub.add_parser("show", help="what is filed under a hash prefix")
+    s.add_argument("prefix")
+    sub.add_parser("records", help="list the records")
+    args = ap.parse_args()
+    if args.verb == "verify":
+        if not args.path and not args.hash:
+            v.error("give a file or --hash")
+        return cmd_verify(args)
+    if args.verb == "show":
+        return cmd_show(args)
+    return cmd_records(args)
+
+
+if __name__ == "__main__":
+    sys.exit(main())
