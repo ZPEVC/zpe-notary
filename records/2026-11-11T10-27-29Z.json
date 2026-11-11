@@ -1,0 +1,80 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-11T10:27:29Z",
+ "note": "Camino Distinto (motohorek.life) migration audit: the before and after measurements, two chained snapshots and the documents around them, filed so the dates cannot move",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "59256efba248d14f5a09da1cc6c7fae0bb071f0765b32e18c8aba3e528ce199c",
+ "rows": [
+  {
+   "ts": "2026-11-11T10:27:29Z",
+   "subject": "Camino Distinto migration audit, 001-2026-11-07-apex-baseline: manifest and file hashes",
+   "kind": "audit-snapshot",
+   "sha256": "e1018c36c7dcd877bb6463b2fc38659cfb332708d5725a42b2fc3ab4466795c0",
+   "bytes": 1480,
+   "source": "motohorek-migration@31cdbeb5005c:audit/ledger/001-2026-11-07-apex-baseline/manifest.json",
+   "method": "sha256 of the file as committed; the report itself stays private until the owner publishes it"
+  },
+  {
+   "ts": "2026-11-11T10:27:29Z",
+   "subject": "Camino Distinto migration audit, 001-2026-11-07-apex-baseline: the report page",
+   "kind": "report",
+   "sha256": "9c4b68c8899e65f910e27cfac7efc111ebd2101b73e3888cf0cd6514bda3b8eb",
+   "bytes": 286028,
+   "source": "motohorek-migration@31cdbeb5005c:audit/ledger/001-2026-11-07-apex-baseline/report.html",
+   "method": "sha256 of the file as committed; the report itself stays private until the owner publishes it"
+  },
+  {
+   "ts": "2026-11-11T10:27:29Z",
+   "subject": "Camino Distinto migration audit, 002-2026-11-09-day-3: manifest and file hashes",
+   "kind": "audit-snapshot",
+   "sha256": "f3486293b03a6896010690958853cc5b8bd760d3ff507c8d641f53c7262da2ae",
+   "bytes": 1583,
+   "source": "motohorek-migration@31cdbeb5005c:audit/ledger/002-2026-11-09-day-3/manifest.json",
+   "method": "sha256 of the file as committed; the report itself stays private until the owner publishes it"
+  },
+  {
+   "ts": "2026-11-11T10:27:29Z",
+   "subject": "Camino Distinto migration audit, 002-2026-11-09-day-3: the report page",
+   "kind": "report",
+   "sha256": "bf56e5c7bf4f3ddc86a9beaaa7e495b643508f757073608f653ad0f2e40c5656",
+   "bytes": 284822,
+   "source": "motohorek-migration@31cdbeb5005c:audit/ledger/002-2026-11-09-day-3/report.html",
+   "method": "sha256 of the file as committed; the report itself stays private until the owner publishes it"
+  },
+  {
+   "ts": "2026-11-11T10:27:29Z",
+   "subject": "Post-audit report, 6 November 2026: the numbers the migration was graded on",
+   "kind": "md",
+   "sha256": "90bba26c79a1291ad80ae80ca081c2d664640d5715f7949a04cf80dbcc2c5a3e",
+   "bytes": 20439,
+   "source": "motohorek-migration@31cdbeb5005c:audit/2026-11-06/REPORT-post-audit-2026-11-06.md",
+   "method": "sha256 of the file as committed; the report itself stays private until the owner publishes it"
+  },
+  {
+   "ts": "2026-11-11T10:27:29Z",
+   "subject": "Ahrefs Site Audit, 9 November 2026: all 46 issue classes transcribed",
+   "kind": "md",
+   "sha256": "3f4408ab242b031a5122d1d986ff9e94c9bed9b26a61f4e54b3943925aef2a4c",
+   "bytes": 5443,
+   "source": "motohorek-migration@31cdbeb5005c:audit/ahrefs-2026-11-09.md",
+   "method": "sha256 of the file as committed; the report itself stays private until the owner publishes it"
+  },
+  {
+   "ts": "2026-11-11T10:27:29Z",
+   "subject": "Lighthouse, 10 November 2026, audit box, median of three passes",
+   "kind": "json",
+   "sha256": "34ba307e3df055623e97997d57203bad1e55730ca7176bd6d003214eb60f3247",
+   "bytes": 849,
+   "source": "motohorek-migration@31cdbeb5005c:baseline/lighthouse-2026-11-10.json",
+   "method": "sha256 of the file as committed; the report itself stays private until the owner publishes it"
+  }
+ ]
+}
