@@ -1,0 +1,44 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-11T11:08:24Z",
+ "note": "Camino Distinto (motohorek.life) migration audit: snapshot 003, the first reading after the dead addresses were repaired; 791 addresses, nine pages changed from 404 to 301, speed measured on the audit box",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "41685a58fbcd493ff7295977b7820ba543bd46c877fcfe8e9f61d1caad3529fa",
+ "rows": [
+  {
+   "ts": "2026-11-11T11:08:24Z",
+   "subject": "Camino Distinto migration audit, 003-2026-11-11-day-4: manifest and file hashes",
+   "kind": "audit-snapshot",
+   "sha256": "6fa0a0d1c5883feb10f75075e4c5f73de7489ee8ed3409fbbed6512d7e742cc2",
+   "bytes": 1583,
+   "source": "motohorek-migration@1d89a49ab66e:audit/ledger/003-2026-11-11-day-4/manifest.json",
+   "method": "sha256 of the file as committed; the report itself stays private until the owner publishes it"
+  },
+  {
+   "ts": "2026-11-11T11:08:24Z",
+   "subject": "Camino Distinto migration audit, 003-2026-11-11-day-4: the report page",
+   "kind": "report",
+   "sha256": "5ee8c88630b36bcf36d688714e6841e66dbd3778d4d7ca26110310ec80027bde",
+   "bytes": 284332,
+   "source": "motohorek-migration@1d89a49ab66e:audit/ledger/003-2026-11-11-day-4/report.html",
+   "method": "sha256 of the file as committed; the report itself stays private until the owner publishes it"
+  },
+  {
+   "ts": "2026-11-11T11:08:24Z",
+   "subject": "Ahrefs Site Audit, 9 November 2026: the outside reading the fix was measured against",
+   "kind": "md",
+   "sha256": "3f4408ab242b031a5122d1d986ff9e94c9bed9b26a61f4e54b3943925aef2a4c",
+   "bytes": 5443,
+   "source": "motohorek-migration@1d89a49ab66e:audit/ahrefs-2026-11-09.md",
+   "method": "sha256 of the file as committed; the report itself stays private until the owner publishes it"
+  }
+ ]
+}
