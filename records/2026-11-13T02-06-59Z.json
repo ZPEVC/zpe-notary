@@ -1,0 +1,44 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-13T02:06:59Z",
+ "note": "Camino Distinto (motohorek.life), snapshot 004: 789 addresses measured at both widths, 0 pages broke, 0 vanished, 2 archive pages gained store-rendered markup and lost height, speed measured on the audit box",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "24261d5768b30e6fc015ab9b24ff72b28026b05b425919caff9578a63aeee939",
+ "rows": [
+  {
+   "ts": "2026-11-13T02:06:59Z",
+   "subject": "Camino Distinto migration audit, 004-2026-11-13-day-5: manifest and file hashes",
+   "kind": "audit-snapshot",
+   "sha256": "d87b9d2459e3024c3eceea4279e95af54acac78c131fa632de09e330786257f1",
+   "bytes": 1583,
+   "source": "motohorek-migration@b2d4886903d0:audit/ledger/004-2026-11-13-day-5/manifest.json",
+   "method": "sha256 of the file as committed; the report itself stays private until the owner publishes it"
+  },
+  {
+   "ts": "2026-11-13T02:06:59Z",
+   "subject": "Camino Distinto migration audit, 004-2026-11-13-day-5: the report page",
+   "kind": "report",
+   "sha256": "d004115cb489e6b2f216050106088a23306f14beec49d9fdb3899823a7f19678",
+   "bytes": 283404,
+   "source": "motohorek-migration@b2d4886903d0:audit/ledger/004-2026-11-13-day-5/report.html",
+   "method": "sha256 of the file as committed; the report itself stays private until the owner publishes it"
+  },
+  {
+   "ts": "2026-11-13T02:06:59Z",
+   "subject": "The regression gate: what a weekly cycle fails on, and the two corrections this run forced",
+   "kind": "py",
+   "sha256": "289f9bce7c0e02b5ed50d7d00b77017cdf340758d1a6878a91c99a59053618b7",
+   "bytes": 6195,
+   "source": "motohorek-migration@b2d4886903d0:serve/regress.py",
+   "method": "sha256 of the file as committed; the report itself stays private until the owner publishes it"
+  }
+ ]
+}
