@@ -1,0 +1,44 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-13T10-26-58Z",
+ "note": "portfolio: the page with the cyber forge theme and the live claims, filed from one commit",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "690616a04bb5f1f9c92311c132b02400d287f9b9576dadb0ca40c5acf43e156d",
+ "rows": [
+  {
+   "ts": "2026:11:13T10-26-58Z",
+   "subject": "portfolio page: five designs including the cyber forge, live claims, the record agent and live proof",
+   "kind": "release-page",
+   "sha256": "b01c33027c60f7a9324114c3cff30edc4a65c7e424fd2d68f94f7ae7260bb7b4",
+   "bytes": 84374,
+   "source": "portfolio@74fecc3:mockup/public/index.html",
+   "method": "sha256 of the file as committed; the served bytes are this commit deployed to the workers.dev address"
+  },
+  {
+   "ts": "2026:11:13T10-26-58Z",
+   "subject": "portfolio Worker: the record agent, the guard, live stats and re-checked claims",
+   "kind": "release-code",
+   "sha256": "44503ffc45be3fd48fe08339fd3b6d6dafc6dc160bd3342083a2d09cd6a99732",
+   "bytes": 35143,
+   "source": "portfolio@74fecc3:mockup/worker.js",
+   "method": "sha256 of the file as committed; the served bytes are this commit deployed to the workers.dev address"
+  },
+  {
+   "ts": "2026:11:13T10-26-58Z",
+   "subject": "portfolio agent corpus: 250 public chunks screened for personal data",
+   "kind": "release-corpus",
+   "sha256": "92af729a8d0002f7461ecf34d6db81d005eaf771de67bd49c01b5d5d886f33b7",
+   "bytes": 92204,
+   "source": "portfolio@74fecc3:mockup/chat-corpus.js",
+   "method": "sha256 of the file as committed; the served bytes are this commit deployed to the workers.dev address"
+  }
+ ]
+}
