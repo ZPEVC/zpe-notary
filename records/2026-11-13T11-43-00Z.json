@@ -1,0 +1,53 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-13T11-43-00Z",
+ "note": "portfolio: the thousand-design catalogue",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "b0d18a39a506a77192295fa99add1e15d9f60f1e8f3d4c71810ce98f1e9590a9",
+ "rows": [
+  {
+   "ts": "2026:11:13T11-43-00Z",
+   "subject": "portfolio page: 1,000 designs from ten layout families, with the catalogue panel",
+   "kind": "release-page",
+   "sha256": "fdd594ebbb88a3d92fc20129fe02c4bd727f58804284341dead1878e26a2ff89",
+   "bytes": 125838,
+   "source": "portfolio@a132302:mockup/public/index.html",
+   "method": "sha256 of the file as committed; the served bytes are this commit deployed to the workers.dev address"
+  },
+  {
+   "ts": "2026:11:13T11-43-00Z",
+   "subject": "portfolio Worker: the record agent, the guard, live stats and re-checked claims",
+   "kind": "release-code",
+   "sha256": "44503ffc45be3fd48fe08339fd3b6d6dafc6dc160bd3342083a2d09cd6a99732",
+   "bytes": 35143,
+   "source": "portfolio@a132302:mockup/worker.js",
+   "method": "sha256 of the file as committed; the served bytes are this commit deployed to the workers.dev address"
+  },
+  {
+   "ts": "2026:11:13T11-43-00Z",
+   "subject": "portfolio agent corpus: 250 public chunks screened for personal data",
+   "kind": "release-corpus",
+   "sha256": "92af729a8d0002f7461ecf34d6db81d005eaf771de67bd49c01b5d5d886f33b7",
+   "bytes": 92204,
+   "source": "portfolio@a132302:mockup/chat-corpus.js",
+   "method": "sha256 of the file as committed; the served bytes are this commit deployed to the workers.dev address"
+  },
+  {
+   "ts": "2026:11:13T11-43-00Z",
+   "subject": "portfolio catalogue: 990 generated designs, colour and type data, contrast-checked at build",
+   "kind": "release-data",
+   "sha256": "1796d9e7b99499a59654e48c1fdbe97feed27f348910f2639d65026cf19becd5",
+   "bytes": 12090,
+   "source": "portfolio@a132302:mockup/designs.js",
+   "method": "sha256 of the file as committed; the served bytes are this commit deployed to the workers.dev address"
+  }
+ ]
+}
