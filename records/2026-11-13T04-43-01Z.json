@@ -1,0 +1,44 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-13T04-43-01Z",
+ "note": "portfolio: the page, the Worker and the agent corpus, filed from one commit before the design switcher and the agent are shown to a client",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "eb06c85e424c98b8daa96fc4dc73a08ed1626671e2d0e6d87a0773a9c0caed65",
+ "rows": [
+  {
+   "ts": "2026:11:13T04-43-01Z",
+   "subject": "portfolio page 2026-11-13: four design directions, the record agent, and the live proof panel",
+   "kind": "release-page",
+   "sha256": "5e0f02c78fff4af42518e69530e4f217206b91cb6ee6f6f80aa46a9e31173f53",
+   "bytes": 76253,
+   "source": "portfolio@b74bbfa:mockup/public/index.html",
+   "method": "sha256 of the file as committed; this is the asset the Worker serves at /"
+  },
+  {
+   "ts": "2026:11:13T04-43-01Z",
+   "subject": "portfolio Worker: the record agent, the output guard and the view counter",
+   "kind": "release-code",
+   "sha256": "7870e54245107a6443d789e7e7ec3efa30d24b6442e9ecf50bc9617f2a1864f0",
+   "bytes": 26600,
+   "source": "portfolio@b74bbfa:mockup/worker.js",
+   "method": "sha256 of the file as committed; the deployed Worker is bundled from it"
+  },
+  {
+   "ts": "2026:11:13T04-43-01Z",
+   "subject": "portfolio agent corpus: 250 public chunks, screened for personal data at build time",
+   "kind": "release-corpus",
+   "sha256": "92af729a8d0002f7461ecf34d6db81d005eaf771de67bd49c01b5d5d886f33b7",
+   "bytes": 92204,
+   "source": "portfolio@b74bbfa:mockup/chat-corpus.js",
+   "method": "sha256 of the file as committed; tools/chat_index.py regenerates it and tests/chat_corpus_test.py checks it"
+  }
+ ]
+}
