@@ -123,6 +123,12 @@
    "record_sha256": "92be47afabbe2df68e432cbed171f6a9129c22697d5184c8aff4cb398bfb3e4b",
    "generated": "2026-11-13T12-07-08Z",
    "rows": 4
+  },
+  {
+   "record": "records/2026-11-13T12-18-24Z.json",
+   "record_sha256": "8c45ac03b00cdc2d7d2e0e53031f27e8fda087fa4132f77f0ce5f1735b304156",
+   "generated": "2026-11-13T12-18-24Z",
+   "rows": 4
   }
  ]
 }

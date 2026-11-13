@@ -1,0 +1,53 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-13T12-18-24Z",
+ "note": "portfolio: the shadowing fix on the surprise build",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "92be47afabbe2df68e432cbed171f6a9129c22697d5184c8aff4cb398bfb3e4b",
+ "rows": [
+  {
+   "ts": "2026:11:13T12-18-24Z",
+   "subject": "portfolio page: 1,000 designs, surprise with memory and Back, proof loader intact",
+   "kind": "release-page",
+   "sha256": "73d0367d65118285d618abf2b2243be5645dbe84562df9b8f24da49cdd83f7e0",
+   "bytes": 127610,
+   "source": "portfolio@48f8ca2:mockup/public/index.html",
+   "method": "sha256 of the file as committed; the served bytes are this commit deployed to the workers.dev address"
+  },
+  {
+   "ts": "2026:11:13T12-18-24Z",
+   "subject": "portfolio Worker: the record agent, the guard, live stats and re-checked claims",
+   "kind": "release-code",
+   "sha256": "44503ffc45be3fd48fe08339fd3b6d6dafc6dc160bd3342083a2d09cd6a99732",
+   "bytes": 35143,
+   "source": "portfolio@48f8ca2:mockup/worker.js",
+   "method": "sha256 of the file as committed; the served bytes are this commit deployed to the workers.dev address"
+  },
+  {
+   "ts": "2026:11:13T12-18-24Z",
+   "subject": "portfolio agent corpus: 250 public chunks screened for personal data",
+   "kind": "release-corpus",
+   "sha256": "92af729a8d0002f7461ecf34d6db81d005eaf771de67bd49c01b5d5d886f33b7",
+   "bytes": 92204,
+   "source": "portfolio@48f8ca2:mockup/chat-corpus.js",
+   "method": "sha256 of the file as committed; the served bytes are this commit deployed to the workers.dev address"
+  },
+  {
+   "ts": "2026:11:13T12-18-24Z",
+   "subject": "portfolio catalogue: 990 generated designs, contrast-checked at build",
+   "kind": "release-data",
+   "sha256": "1796d9e7b99499a59654e48c1fdbe97feed27f348910f2639d65026cf19becd5",
+   "bytes": 12090,
+   "source": "portfolio@48f8ca2:mockup/designs.js",
+   "method": "sha256 of the file as committed; the served bytes are this commit deployed to the workers.dev address"
+  }
+ ]
+}
