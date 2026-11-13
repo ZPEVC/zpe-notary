@@ -1,0 +1,26 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-13T14:17:24Z",
+ "note": "portfolio design magic: the seeded catalogue, the field, bones, weather, record mode, the brief, the duel and the download",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "0beee211cf6decdebd4da491c938413b7acff97deacd766ff477309757e926b4",
+ "rows": [
+  {
+   "ts": "2026-11-13T14:17:24Z",
+   "subject": "Pulse Performance portfolio page, design magic build",
+   "kind": "page",
+   "sha256": "96c0c42e1162cf3e6581d96ce25ebf22124a7ddb469751b43ed82563dd096b71",
+   "bytes": 148008,
+   "source": "portfolio@9468cb6:mockup/public/index.html",
+   "method": "sha256 of the page as committed and served; the proof names the same hash"
+  }
+ ]
+}
