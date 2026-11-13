@@ -1,0 +1,26 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-13T14:53:48Z",
+ "note": "portfolio: live at the apex, the forge at /forge, weather named in the ribbon",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "a50bd8e8854d2fc01a20e3aa185ee19cef86d9e7a185e0b1400504510a4edb0e",
+ "rows": [
+  {
+   "ts": "2026-11-13T14:53:48Z",
+   "subject": "Pulse Performance portfolio page, live on pAulseperformance.com",
+   "kind": "page",
+   "sha256": "5fd522c800ad7d0b711764edbcf261cdf9c7e701469a6f35ba7866089867ad73",
+   "bytes": 151778,
+   "source": "portfolio@d92ff8d:mockup/public/index.html",
+   "method": "sha256 of the page as committed and served; the proof names the same hash"
+  }
+ ]
+}
