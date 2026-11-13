@@ -1,0 +1,35 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-13T12:29:25Z",
+ "note": "weekly cycle 008-2026-11-13-weekly: every address measured at 1920 and 390, the chain verified, the change graded, the page published",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "8c45ac03b00cdc2d7d2e0e53031f27e8fda087fa4132f77f0ce5f1735b304156",
+ "rows": [
+  {
+   "ts": "2026-11-13T12:29:25Z",
+   "subject": "Camino Distinto migration audit, 008-2026-11-13-weekly: manifest and file hashes",
+   "kind": "audit-snapshot",
+   "sha256": "33910fbaa6196e50a0c7d8c2478ad6cf2cbda4ceb7dfd5c1b2adaaa72923a606",
+   "bytes": 1584,
+   "source": "motohorek-migration@fa11f7353253:audit/ledger/008-2026-11-13-weekly/manifest.json",
+   "method": "sha256 of the file as committed; the report itself stays private until the owner publishes it"
+  },
+  {
+   "ts": "2026-11-13T12:29:25Z",
+   "subject": "Camino Distinto migration audit, 008-2026-11-13-weekly: the report page",
+   "kind": "report",
+   "sha256": "6aef7a6a01cee46f94d8bb6f876c339d6afe09a7ee1cbcb463f445b789b4cd54",
+   "bytes": 301861,
+   "source": "motohorek-migration@fa11f7353253:audit/ledger/008-2026-11-13-weekly/report.html",
+   "method": "sha256 of the file as committed; the report itself stays private until the owner publishes it"
+  }
+ ]
+}
