@@ -1,0 +1,26 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-13T15:45:37Z",
+ "note": "portfolio: the Pine Script card names the frontend, not the platform",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "6cd47bbbe999e0622de74b3af8568bb6ef4144622f35bae585d4c64c17450d3a",
+ "rows": [
+  {
+   "ts": "2026-11-13T15:45:37Z",
+   "subject": "Pulse Performance portfolio page, frontend label",
+   "kind": "page",
+   "sha256": "fc52f73a32af0b008da3304613616c0b148edaf165993d01550238edba596fa2",
+   "bytes": 152076,
+   "source": "portfolio@bad96e1:mockup/public/index.html",
+   "method": "sha256 of the page as committed and served; the proof names the same hash"
+  }
+ ]
+}
