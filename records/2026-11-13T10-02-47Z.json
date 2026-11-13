@@ -1,0 +1,44 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-13T10-02-47Z",
+ "note": "portfolio: the page after the domain cutover and the live claims build, filed from one commit",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "4bf84c046255b42b2359306cdb7f93b9fca0e0eea04ced63174271ea4f4062e4",
+ "rows": [
+  {
+   "ts": "2026:11:13T10-02-47Z",
+   "subject": "portfolio page: four designs, live claims, the record agent and live proof",
+   "kind": "release-page",
+   "sha256": "7b214996b8c2ba93549cd9ef518c33cae5768b7afb9ca307102929f4fc599a4a",
+   "bytes": 81556,
+   "source": "portfolio@f329e73:mockup/public/index.html",
+   "method": "sha256 of the file as committed; the served bytes are this commit deployed to the custom domain"
+  },
+  {
+   "ts": "2026:11:13T10-02-47Z",
+   "subject": "portfolio Worker: the record agent, the guard, live stats and re-checked claims",
+   "kind": "release-code",
+   "sha256": "44503ffc45be3fd48fe08339fd3b6d6dafc6dc160bd3342083a2d09cd6a99732",
+   "bytes": 35143,
+   "source": "portfolio@f329e73:mockup/worker.js",
+   "method": "sha256 of the file as committed; the served bytes are this commit deployed to the custom domain"
+  },
+  {
+   "ts": "2026:11:13T10-02-47Z",
+   "subject": "portfolio agent corpus: 250 public chunks screened for personal data",
+   "kind": "release-corpus",
+   "sha256": "92af729a8d0002f7461ecf34d6db81d005eaf771de67bd49c01b5d5d886f33b7",
+   "bytes": 92204,
+   "source": "portfolio@f329e73:mockup/chat-corpus.js",
+   "method": "sha256 of the file as committed; the served bytes are this commit deployed to the custom domain"
+  }
+ ]
+}
