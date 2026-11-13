@@ -1,0 +1,44 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-13T10-58-56Z",
+ "note": "portfolio: all ten themes, filed from one commit",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "5c207eaac8733c9a78179732bdd75ef2ac5cbd5c461b25785c0efc595b78b628",
+ "rows": [
+  {
+   "ts": "2026:11:13T10-58-56Z",
+   "subject": "portfolio page: ten themes, each a layout, morphed by a view transition; live claims, the agent, live proof",
+   "kind": "release-page",
+   "sha256": "36ab03e52c7c21b39cba10c1d194b356eae71954d6837192e54f612047c73669",
+   "bytes": 103222,
+   "source": "portfolio@ab70a34:mockup/public/index.html",
+   "method": "sha256 of the file as committed; the served bytes are this commit deployed to the workers.dev address"
+  },
+  {
+   "ts": "2026:11:13T10-58-56Z",
+   "subject": "portfolio Worker: the record agent, the guard, live stats and re-checked claims",
+   "kind": "release-code",
+   "sha256": "44503ffc45be3fd48fe08339fd3b6d6dafc6dc160bd3342083a2d09cd6a99732",
+   "bytes": 35143,
+   "source": "portfolio@ab70a34:mockup/worker.js",
+   "method": "sha256 of the file as committed; the served bytes are this commit deployed to the workers.dev address"
+  },
+  {
+   "ts": "2026:11:13T10-58-56Z",
+   "subject": "portfolio agent corpus: 250 public chunks screened for personal data",
+   "kind": "release-corpus",
+   "sha256": "92af729a8d0002f7461ecf34d6db81d005eaf771de67bd49c01b5d5d886f33b7",
+   "bytes": 92204,
+   "source": "portfolio@ab70a34:mockup/chat-corpus.js",
+   "method": "sha256 of the file as committed; the served bytes are this commit deployed to the workers.dev address"
+  }
+ ]
+}

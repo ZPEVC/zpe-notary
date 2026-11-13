@@ -99,6 +99,12 @@
    "record_sha256": "5c207eaac8733c9a78179732bdd75ef2ac5cbd5c461b25785c0efc595b78b628",
    "generated": "2026-11-13T10-40-04Z",
    "rows": 3
+  },
+  {
+   "record": "records/2026-11-13T10-58-56Z.json",
+   "record_sha256": "a78a6b6831259ae250a34296985cebc9c8ea117c7afb0b93fbb38056fe0ea2d3",
+   "generated": "2026-11-13T10-58-56Z",
+   "rows": 3
   }
  ]
 }
