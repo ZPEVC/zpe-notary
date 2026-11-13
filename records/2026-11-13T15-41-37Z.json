@@ -1,0 +1,26 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-13T15:41:37Z",
+ "note": "portfolio: every card carries a measured duration or says unmeasured",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "1d0a0a00bc7aab68a1de57a5bb64b76e3bb608bce7361f70fcbee6604d19d403",
+ "rows": [
+  {
+   "ts": "2026-11-13T15:41:37Z",
+   "subject": "Pulse Performance portfolio page, all card durations",
+   "kind": "page",
+   "sha256": "56cc2c663b5080445483ea9435ea14bae72d309df92f8a2eaed70336e4ca9675",
+   "bytes": 152067,
+   "source": "portfolio@6778d33:mockup/public/index.html",
+   "method": "sha256 of the page as committed and served; the proof names the same hash"
+  }
+ ]
+}
