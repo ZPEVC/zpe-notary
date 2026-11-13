@@ -1,0 +1,26 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-13T16:01:44Z",
+ "note": "portfolio: the switcher keeps a keyboard stop under the g0406 default",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "0e636ce3762be6a730b6b726736b9e6d682f48bef04678987bc659d1eddd2b0e",
+ "rows": [
+  {
+   "ts": "2026-11-13T16:01:44Z",
+   "subject": "Pulse Performance portfolio page, switcher tab stop",
+   "kind": "page",
+   "sha256": "08c6cb51aea18ffe91b3fd9ecf9fc865defdbb3766ebf3e985aba57cafa71f89",
+   "bytes": 152415,
+   "source": "portfolio@91d05ab:mockup/public/index.html",
+   "method": "sha256 of the page as committed and served; the proof names the same hash"
+  }
+ ]
+}
