@@ -1,0 +1,26 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-13T14:39:05Z",
+ "note": "portfolio: Pulse Performance brand, the S key, the cyber forge as the house theme, and the phone field",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "b0b046d755ef40d3712972a387a1a15d7848ac9abeebfbff66c398ff04357bc1",
+ "rows": [
+  {
+   "ts": "2026-11-13T14:39:05Z",
+   "subject": "Pulse Performance portfolio page, brand and forge theme",
+   "kind": "page",
+   "sha256": "98a951ebe70aa8b723cab4dd77bf4a673d5230a9724c4ccddc9ffcfd7b49abcf",
+   "bytes": 151691,
+   "source": "portfolio@7e6911f:mockup/public/index.html",
+   "method": "sha256 of the page as committed and served; the proof names the same hash"
+  }
+ ]
+}
