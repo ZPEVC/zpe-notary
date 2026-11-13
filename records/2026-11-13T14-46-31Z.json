@@ -1,0 +1,26 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-13T14:46:31Z",
+ "note": "portfolio: the name reads pAulse Performance, capital A deliberate",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "94a64a3664b700c69adb64bf4c1fb0c304fcfe7f6c5e63e49b242bc4b050736b",
+ "rows": [
+  {
+   "ts": "2026-11-13T14:46:31Z",
+   "subject": "Pulse Performance portfolio page, the name as spelled",
+   "kind": "page",
+   "sha256": "8cfaac687ebb7483de49ee919a87c78f1ca2d8c62367867da36a039480aaf8b9",
+   "bytes": 151696,
+   "source": "portfolio@da6223e:mockup/public/index.html",
+   "method": "sha256 of the page as committed and served; the proof names the same hash"
+  }
+ ]
+}
