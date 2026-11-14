@@ -1,0 +1,26 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-14T07:36:23Z",
+ "note": "portfolio: four events and the owner view",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "f348e523e6c76da5e91b7295a54609c542d9a38768904c2ef677a1ebd3bb9354",
+ "rows": [
+  {
+   "ts": "2026-11-14T07:36:23Z",
+   "subject": "pAulse Performance portfolio page, the events and the owner view",
+   "kind": "page",
+   "sha256": "195dbb6ab014ff0d2ab6a34a60f9e99cc39bd8419b9e0590f373a3185a5c41d5",
+   "bytes": 164807,
+   "source": "portfolio@b306acf:mockup/public/index.html",
+   "method": "sha256 of the page as committed and served; the proof names the same hash"
+  }
+ ]
+}
