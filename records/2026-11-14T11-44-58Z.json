@@ -1,0 +1,26 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-14T11:44:58Z",
+ "note": "portfolio: papers spread across the palette, family colour from the palette",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "1b836ad81d9de665449111d13f27e272f38d695c2eb37736914e15c8b999b07a",
+ "rows": [
+  {
+   "ts": "2026-11-14T11:44:58Z",
+   "subject": "pAulse Performance portfolio page, grounds spread and family colour from the palette",
+   "kind": "page",
+   "sha256": "a9a63c0dfd2f91bcdfd84a1b75e0739d28215399bb6bf98cd8a07bebd32d2730",
+   "bytes": 165659,
+   "source": "portfolio@36cd824:mockup/public/index.html",
+   "method": "sha256 of the page as committed and served; the proof names the same hash"
+  }
+ ]
+}
