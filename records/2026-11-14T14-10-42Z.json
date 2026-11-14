@@ -1,0 +1,26 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-14T14:10:42Z",
+ "note": "the brand face, the footer round, the reveal guard, the search index and the sidebar column, measured on the live site after the apex switch",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "0038ed6f10d1eef7a21cb899676a5de932f7975e90ecc052ef6b8cf91dbdbe7b",
+ "rows": [
+  {
+   "ts": "2026-11-14T14:10:42Z",
+   "subject": "Camino Distinto migration audit, 012-2026-11-14: manifest and file hashes",
+   "kind": "audit-snapshot",
+   "sha256": "f9027ff3f8813eaeb632e5364ba6d5f436ff318e5a1c6d5a96c7ace4da6c22c6",
+   "bytes": 1139,
+   "source": "motohorek-migration@e8a0724f8aee:audit/ledger/012-2026-11-14/manifest.json",
+   "method": "sha256 of the file as committed; the report itself stays private until the owner publishes it"
+  }
+ ]
+}
