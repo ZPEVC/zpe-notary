@@ -1,0 +1,26 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-14T07:19:24Z",
+ "note": "portfolio: a stranger can request the private record",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "60a4675736966122a0379d91620f369e7afb33505bb3d5dcb21dec5a14ff55c3",
+ "rows": [
+  {
+   "ts": "2026-11-14T07:19:24Z",
+   "subject": "pAulse Performance portfolio page, the request form",
+   "kind": "page",
+   "sha256": "dc6a192564b26b0e2171feb282aaad71bb65010e0b01e61b91d2cef4b740f806",
+   "bytes": 159438,
+   "source": "portfolio@14963aa:mockup/public/index.html",
+   "method": "sha256 of the page as committed and served; the proof names the same hash"
+  }
+ ]
+}
