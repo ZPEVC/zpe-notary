@@ -1,0 +1,26 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-14T11:25:41Z",
+ "note": "portfolio: S walks the catalogue, on the home page too",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "0038ed6f10d1eef7a21cb899676a5de932f7975e90ecc052ef6b8cf91dbdbe7b",
+ "rows": [
+  {
+   "ts": "2026-11-14T11:25:41Z",
+   "subject": "pAulse Performance portfolio page, S walks the catalogue",
+   "kind": "page",
+   "sha256": "0d563cbb24de9f4792defb58ced4833f2afacc93e73d6d37f680eab302d7f98b",
+   "bytes": 165600,
+   "source": "portfolio@8465070:mockup/public/index.html",
+   "method": "sha256 of the page as committed and served; the proof names the same hash"
+  }
+ ]
+}
