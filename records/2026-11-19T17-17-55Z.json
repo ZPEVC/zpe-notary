@@ -1,0 +1,32 @@
+{
+ "schema": "zpe.notary.record/1",
+ "generated": "2026-11-19T17:17:55Z",
+ "note": "page 60cf4c9318cbe38cbe801096d3aa0eeae2af3085ac2e495e56ed4aabbdd15eba at 50e1a11",
+ "signing_key": {
+  "type": "ssh-ed25519",
+  "fingerprint": "SHA256:sWXcCC7MVDHalPngYJ61jTZMreLfC1KypZwTssfje/s",
+  "public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPY251DG8pGC5i6ex2KsUQiT7H3cSXMmeg6Mh9F7+SYB zpe-evidence-2026-11-09"
+ },
+ "how_to_check": [
+  "recompute sha256 of your copy and compare with the row",
+  "ssh-keygen -Y verify -f allowed_signers -I zpe-evidence -n evidence -s <record>.sig < <record>"
+ ],
+ "prev_record": "e314a827ae3c164e2f9b25e7a4b1e8d34003c0e9eaed5591663c243e25abc1c3",
+ "rows": [
+  {
+   "ts": "2026-11-19T17:17:55Z",
+   "subject": "page 60cf4c9318cbe38cbe801096d3aa0eeae2af3085ac2e495e56ed4aabbdd15eba at 50e1a11",
+   "kind": "page",
+   "sha256": "60cf4c9318cbe38cbe801096d3aa0eeae2af3085ac2e495e56ed4aabbdd15eba",
+   "bytes": 176986,
+   "source": "portfolio@50e1a11:mockup/public/index.html",
+   "method": "sha256 of the page as committed and served; the proof names the same hash"
+  }
+ ],
+ "chain_note": [
+  "3 break(s) already in the chain when this record was filed",
+  "2026-11-13T15-16-38Z.json: prev_record 936d0570abe1 does not name a608b7b55b38",
+  "2026-11-14T05-57-59Z.json: prev_record ece7e2e88638 does not name b798b90f329d",
+  "2026-11-14T14-10-42Z.json: prev_record 0038ed6f10d1 does not name 0fca19c9616b"
+ ]
+}
