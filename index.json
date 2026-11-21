@@ -267,6 +267,12 @@
    "record_sha256": "64f48aad49cc569c8491275a13df5d13bd3c51954c03f0a626d1d2c9f43c3167",
    "generated": "2026-11-19T17:17:55Z",
    "rows": 1
+  },
+  {
+   "record": "records/2026-11-21T20-17-21Z.json",
+   "record_sha256": "072c537a8a774db659bcbb652326f76104c749495c842abac08f983234fea8c5",
+   "generated": "2026-11-21T20:17:21Z",
+   "rows": 2
   }
  ]
 }
